@@ -16,25 +16,50 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
 
-
-            if (!number1.isEmpty() || !number2.isEmpty()) {
-                number1.error = "Digite numero"
-                number2.error = "Digite numero"
-
-            } else {
-                val numberOne = number1.editText?.text.toString().toDouble()
-                val numberTwo = number1.editText?.text.toString().toDouble()
-                val resul = numberOne + numberTwo
-
-                textView.text = resul.toString()
-
-            }
+            opcion2()
 
 
         }
 
 
     }
+
+    fun opcion1() {
+
+        if (number1.isEmpty()) {
+            number1.error = "Digite numero"
+
+        }
+        if (number2.isEmpty()) {
+            number2.error = "Digite numero"
+        }
+
+        if (number1.isNotEmpty() || number2.isNotEmpty()) {
+            val numberOne = number1.editText?.text.toString().toDouble()
+            val numberTwo = number2.editText?.text.toString().toDouble()
+            val resul = numberOne + numberTwo
+
+            textView.text = resul.toString()
+
+        }
+
+    }
+
+    fun opcion2() {
+
+        val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
+        double?.let {
+            // Number is double....
+
+        } ?: (number1.setError("Enter number")  )
+
+        val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
+        double2?.let {
+            // Number is double....
+        } ?: (number2.setError("Enter number")  )
+    }
+
+
 
 
 }
