@@ -46,20 +46,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun opcion2() {
-
+/*
         val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
+        val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
+
         double?.let {
             // Number is double....
+        } ?: (number1.setError("Enter number"))
 
-        } ?: (number1.setError("Enter number")  )
-
-        val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
         double2?.let {
-            // Number is double....
-        } ?: (number2.setError("Enter number")  )
+        } ?: (number2.setError("Enter number"))
+
+ */
+
+        val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
+        val double2: Double? = number2.editText?.text.toString().toDoubleOrNull()
+
+        double?.let {
+
+            //double is a number ....
+        } ?: (number1.setError("Error"))
+
+        double2?.let {
+            //Also double2 is a number ....
+            if (double != null) {
+                textView.text = (double + double2).toString()
+            }
+
+        } ?: (number2.setError("Error"))
+
+
     }
 
+    /* val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
+     double2?.let {
+         // Number is double....
+         val valor2 = double
 
+     } ?: (number2.setError("Enter number")  )
+ }
+
+     */
 
 
 }
