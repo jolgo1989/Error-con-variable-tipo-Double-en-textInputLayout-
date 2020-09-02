@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My ApplicationSuma</string>
+    <string name="numero1">Ingrese numero</string>
+    <string name="numero2">Ingrese numero</string>
+    <string name="button">Button</string>
+    <string name="textview">hola mundo</string>
+</resources>
