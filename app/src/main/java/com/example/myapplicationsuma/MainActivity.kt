@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
 
-            opcion2()
+            //  opcion2()
+            opcion1()
 
 
         }
@@ -25,39 +26,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun opcion1() {
+        val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
+        val double2: Double? = number2.editText?.text.toString().toDoubleOrNull()
 
-        if (number1.isEmpty()) {
-            number1.error = "Digite numero"
+
+        if (double != null) {
+            //Double1 is a number
+            number1.error = ""
+        }
+        if (double == null) {
+            //Double1 is not a number
+            number1.error = "Error"
+            textView.text = ""
+        }
+
+        if (double2 != null) {
+            //Double2 is a number
+            number2.error = ""
 
         }
-        if (number2.isEmpty()) {
-            number2.error = "Digite numero"
+        if (double2 == null) {
+            //Double2 is not a number
+            number2.error = "Error"
+            textView.text = ""
         }
 
-        if (number1.isNotEmpty() || number2.isNotEmpty()) {
-            val numberOne = number1.editText?.text.toString().toDouble()
-            val numberTwo = number2.editText?.text.toString().toDouble()
-            val resul = numberOne + numberTwo
-
-            textView.text = resul.toString()
-
+        if (double != null && double2 != null) {
+            textView.text = (double + double2).toString()
         }
+
 
     }
 
     fun opcion2() {
-/*
-        val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
-        val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
-
-        double?.let {
-            // Number is double....
-        } ?: (number1.setError("Enter number"))
-
-        double2?.let {
-        } ?: (number2.setError("Enter number"))
-
- */
 
         val double: Double? = number1.editText?.text.toString().toDoubleOrNull()
         val double2: Double? = number2.editText?.text.toString().toDoubleOrNull()
@@ -72,21 +73,10 @@ class MainActivity : AppCompatActivity() {
             if (double != null) {
                 textView.text = (double + double2).toString()
             }
-
         } ?: (number2.setError("Error"))
 
 
     }
-
-    /* val double2: Double? = number1.editText?.text.toString().toDoubleOrNull()
-     double2?.let {
-         // Number is double....
-         val valor2 = double
-
-     } ?: (number2.setError("Enter number")  )
- }
-
-     */
 
 
 }
