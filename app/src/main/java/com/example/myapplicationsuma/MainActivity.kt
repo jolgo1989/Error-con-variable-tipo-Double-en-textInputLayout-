@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-// Forma compleja
+
     fun opcion1() {
         val double = textInputLayout.editText?.text.toString().toDoubleOrNull()
         val double2 = textInputLayout2.editText?.text.toString().toDoubleOrNull()
