@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
+//Metodo con operador elvis
     fun opcion2() {
 
         val double: Double? = textInputLayout.editText?.text.toString().toDoubleOrNull()
